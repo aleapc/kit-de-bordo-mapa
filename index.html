@@ -46,7 +46,9 @@
   .thesis{font-size:16px;color:var(--ink-2);max-width:62ch;margin:0 0 1.5rem}
   .thesis b{font-weight:500;color:var(--ink)}
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 1.5rem}
-  .kpi{background:var(--paper);border:.5px solid var(--line);border-radius:12px;padding:.85rem .95rem}
+  .kpi-tam .n{color:var(--live)}
+    .kpi-tam{border-left:3px solid var(--live);padding-left:14px}
+    .kpi{background:var(--paper);border:.5px solid var(--line);border-radius:12px;padding:.85rem .95rem}
   .kpi .n{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
   .kpi .n small{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400}
   .kpi .l{font-size:12.5px;color:var(--muted);margin-top:.35rem}
@@ -159,6 +161,7 @@ const {origens,destinos,grid,totais} = DATA;
 // KPIs
 const kh = document.getElementById('kpis');
 kh.innerHTML = `
+  <div class="kpi kpi-tam"><div class="n">50,8<span style="font-size:.55em">%</span></div><div class="l"><b>do TAM endereçável já tem curso com conteúdo completo</b> — 119,4 M de 235,0 M de chegadas/ano. Com Grécia&nbsp;DE, Türkiye e Portugal, que estão em produção, chega a <b>60,6%</b> (142,5 M).<br><span style="opacity:.72;font-size:.92em"><b>Como isto é contado, porque o número fácil seria errado.</b> Não somei os totais de destino: como diz a ressalva abaixo, Espanha e Grécia publicam <b>TF</b>, França e Itália publicam <b>TCE</b> e a Alemanha publica <b>pernoites</b> — empilhar as três réguas daria 745,6&nbsp;M e não significaria nada. A unidade contada é o <b>corredor</b> origem→destino, tomado célula a célula do mesmo grid, de modo que o viés de série se cancela na fração.<br>O denominador são os corredores <b>medidos</b> cujo comprador fala uma das quatro línguas-guia do catálogo (EN, DE, FR, IT). Fora dele, de propósito: <b>turismo doméstico</b> (a diagonal origem=destino — um italiano na Itália não compra curso de italiano; deixá-la dentro inflava o TAM em 65,7&nbsp;M), e <b>Canadá, Suíça e Bélgica</b>, que são multilíngues e não foram creditados a curso nenhum. Os dois cortes empurram o percentual para baixo, e é assim que tem de ser.</span></div></div>
   <div class="kpi"><div class="n"><span class="dots"><span class="dot" style="background:var(--live)"></span><span class="dot" style="background:var(--live)"></span><span class="dot" style="background:var(--live)"></span><span class="dot" style="background:var(--live)"></span><span class="dot" style="background:var(--prod)"></span><span class="dot" style="background:var(--prod)"></span><span class="dot" style="background:var(--prod)"></span><span class="dot" style="background:var(--prod)"></span><span class="dot" style="background:var(--prod)"></span><span class="dot" style="background:var(--prod)"></span></span></div><div class="l">4 no ar — coluna Espanha completa (EN · DE · FR · IT) · <b>5 em produção, prontos para publicar</b> (EN→México, EN→Itália, DE→Itália, EN→França e DE→França: 36/36 partes cada, áudio gravado, build verde) · <b>6 em produção, prontos para publicar</b> (EN→México, EN→Itália, DE→Itália, EN→França, DE→França e EN→Grécia) · <b>10 cursos no catálogo</b></div></div>
   <div class="kpi"><div class="n">224</div><div class="l">células com fonte primária (de 225)</div></div>
   <div class="kpi"><div class="n">18,4<small> M</small></div><div class="l">GB→Espanha, o maior corredor pago do mundo</div></div>
